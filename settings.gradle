@@ -1,0 +1,3 @@
+include ':Toolbarlibrary'
+include ':libpay'
+include ':app', ':httplibrary', ':mvplibrary', ':libzxing'

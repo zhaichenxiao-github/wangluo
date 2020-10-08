@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_margin="@dimen/dp_2"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/colorShoplist"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_100">
+        <ImageView
+            android:id="@+id/iv_shop_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_goodsDesc"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorRed"
+        android:id="@+id/tv_goodsDefaultPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_goodsSalesCount"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorHuise"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_20"
+            android:id="@+id/tv_goodsStockCount"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorHuise"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

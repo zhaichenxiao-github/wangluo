@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SetUpActivity">
+
+    <RelativeLayout
+        android:id="@+id/rll_login"
+        android:padding="@dimen/dp_8"
+        android:background="@color/colorBlue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_login_tuichu"
+            android:background="@mipmap/icon_back"
+            android:layout_width="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/dp_30" />
+        <TextView
+            android:text="设置"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_20"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_yonghu"
+        android:background="@color/colorWhite"
+        android:layout_below="@id/rll_login"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_5"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tv_yh"
+            android:layout_centerVertical="true"
+            android:text="用户协议"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:background="@drawable/icon_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20" />
+    </RelativeLayout>
+    <TextView
+        android:layout_below="@id/rl_yonghu"
+        android:layout_width="match_parent"
+        android:background="@color/colorBlack"
+        android:layout_height="@dimen/dp_0_1" />
+    <RelativeLayout
+        android:id="@+id/rl_yijian"
+        android:background="@color/colorWhite"
+        android:layout_below="@id/rl_yonghu"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_5"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tv_yj"
+            android:layout_centerVertical="true"
+            android:text="反馈意见"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:background="@drawable/icon_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20" />
+    </RelativeLayout>
+    <TextView
+        android:layout_below="@id/rl_yijian"
+        android:layout_width="match_parent"
+        android:background="@color/colorBlack"
+        android:layout_height="@dimen/dp_0_1" />
+    <RelativeLayout
+        android:id="@+id/rl_guanyu"
+        android:background="@color/colorWhite"
+        android:layout_below="@id/rl_yijian"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_5"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tv_gy"
+            android:layout_centerVertical="true"
+            android:text="关于"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:background="@drawable/icon_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_below="@id/rl_guanyu"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="350dp"
+        android:text="退出登录"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

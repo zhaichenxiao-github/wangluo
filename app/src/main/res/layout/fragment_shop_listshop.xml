@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_pop"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ShopListshopFragment">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"/>
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_shop_list_listshop_goodsDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_shop_list_listshop_goodsDefaultPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorHuise"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10" />
+    <LinearLayout
+        android:id="@+id/ll_shop"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_8"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+        <TextView
+            android:text="已选"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_10"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:id="@+id/tv_goodsDefaultSku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="···"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_20"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

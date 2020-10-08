@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.wangluo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 自动聚焦权限 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        tools:replace="android:allowBackup,android:icon"
+        android:name=".app.ShopApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--value的值填写你在友盟后台申请的应用Appkey-->
+        <meta-data android:value="5f50e8c37823567fd8636ece" android:name="UMENG_APPKEY"/>
+        <!--value的值填写渠道名称，例如yingyongbao。这里设置动态渠道名称变量-->
+        <meta-data android:value="yingyongbao" android:name="UMENG_CHANNEL"/>
+        <activity android:name=".activity.DemoActivity"></activity>
+        <activity android:name=".activity.SubmitActivity" />
+        <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.EditActivity" />
+        <activity android:name=".activity.SetUpActivity" />
+        <activity android:name=".activity.ResetActivity" />
+        <activity android:name=".activity.ForGetActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.ShopListHomeActivity" />
+        <activity android:name=".activity.ShopListActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 极光推送广播的配置 -->
+        <receiver
+            android:name=".receiver.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.example.liangxq.shopping" />
+            </intent-filter>
+        </receiver> <!-- &lt;!&ndash;极光推送广播的配置&ndash;&gt; -->
+        <!-- <service android:name=".service.JPushService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false" -->
+        <!-- android:process=":pushcore"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.jiguang.user.service.action" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <receiver
+            android:name=".receiver.ShoppingReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.example.liangxq.shopping" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

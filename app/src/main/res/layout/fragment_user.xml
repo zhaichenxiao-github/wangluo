@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragment.UserFragment">
+    <RelativeLayout
+        android:background="@drawable/bg_me_header"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_default_user"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/tv_login"
+            android:text="登陆/注册"
+            android:textSize="@dimen/dp_20"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/iv_head"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_wait_money"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:background="@drawable/icon_order_wait_pay"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="待付款"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_wait_shou"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:background="@drawable/icon_order_wait_confirm"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="待收获"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_ok"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:background="@drawable/icon_order_completed"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="已完成"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/my_dingdan"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:background="@drawable/icon_order"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="我的订单"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorHuise"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20" />
+    <LinearLayout
+        android:id="@+id/shouhuo"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/icon_address"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30" />
+        <TextView
+            android:layout_weight="2"
+            android:text="收获管理"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginLeft="@dimen/dp_230"
+            android:background="@drawable/icon_arrow"
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_30" />
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorHuise"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:id="@+id/fenxiang"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/icon_share"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30" />
+        <TextView
+            android:text="分享"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+
+            android:layout_marginLeft="@dimen/dp_230"
+            android:background="@drawable/icon_arrow"
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_30" />
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorHuise"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:id="@+id/shezhi"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/icon_setting"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30" />
+        <TextView
+            android:layout_weight="2"
+            android:text="设置"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginLeft="@dimen/dp_230"
+            android:background="@drawable/icon_arrow"
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_30" />
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorHuise"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+</LinearLayout>

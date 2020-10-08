@@ -1,0 +1,144 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.liangxq.shopping"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "c.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.example.liangxq.shopping",
+                JPUSH_APPKEY : "168bc3ce15b62b3fa2eb9721", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+//    //签名文件
+
+    buildTypes {
+        release {
+//            buildConfigField "boolean", "LOG_DEBUG", "false" //不显示log
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //            shrinkResources true
+//            signingConfig signingConfigs.config
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    greendao {
+        schemaVersion 1 //数据库版本号
+        daoPackage 'com.example.wangluo.dao'  //数据库全路径
+        targetGenDir 'src/main/java'  //存放位置
+    }
+
+    /*配置渠道*/
+    productFlavors {
+        yingyongbao {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+    }
+}
+
+dependencies {
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(':httplibrary')
+    implementation project(':mvplibrary')
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+
+    // 下面各SDK根据宿主App是否使用相关业务按需引入。
+    // OAID目前为目前国内市场主流的Android Q设备标识，可根据需要选择。
+    // 友盟统计SDK
+    implementation 'com.umeng.umsdk:common:9.1.0' // (必选)
+    implementation 'com.umeng.umsdk:game:9.1.0+G' // 游戏统计SDK依赖(可选)
+    implementation 'com.umeng.umsdk:asms:1.1.3' // asms包依赖(必选)
+    implementation 'com.umeng.umsdk:crash:0.0.4' // native crash包依赖(必选)
+
+    implementation 'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
+    implementation 'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
+    implementation 'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
+    implementation 'com.umeng.umsdk:oaid_vivo:1.0.0.1' // (可选)
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.c.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //leakcanary内存检测工具
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    implementation 'com.android.support:recyclerview-v7:29.0.0'
+    implementation 'com.android.support:cardview-v7:29.0.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.android.support:design:29.0.0'
+
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+    //底部导航
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    //跑马灯
+    implementation 'com.github.paradoxie:AutoVerticalTextview:0.1'
+
+    //角标
+    implementation 'net.wujingchao.android.view:simple-tag-imageview:1.0.1'
+
+    //万能适配器依赖
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
+    //刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    implementation 'com.github.AnJiaoDe:MultiFlowLayout:V1.1.2'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //极光
+    implementation 'cn.jiguang.sdk:jpush:3.7.0'  // 此处以JPush 3.7.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.4.2'
+    implementation project(path: ':libzxing')  // 此处以JCore 2.4.2 版本为例。
+//    //二维码
+//    implementation 'com.zxn.zxing:CustomUIZxing:1.0.3'
+    //圆形imageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //选择弹窗
+    implementation 'com.bigkoo:alertview:1.0.3'
+
+    //相册选择框架
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
+
+    //流式布局
+    implementation 'com.zhy:flowlayout-lib:1.0.3'
+    //购物车加减按钮
+    implementation 'ren.qinc.numberbutton:numberbutton:0.0.1'
+
+    //仿淘宝京东地址选择器 三级联动
+    implementation 'com.smarttop:jd-address:1.1.0'
+
+    //支付宝
+    // 添加下面的内容
+    compile  (name: 'alipaySdk-15.7.9-20200727142846', ext: 'aar')
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CategoryFragment">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:background="#03A9F4"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+        <TextView
+            android:id="@+id/tv"
+            android:text="商品列表"
+            android:textSize="@dimen/dp_25"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ll"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:id="@+id/rv"
+            android:padding="8dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/category_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150" />
+            <TextView
+                android:text="热卖推荐"
+                android:textSize="@dimen/dp_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="#ffffff"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:id="@+id/rv_two"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

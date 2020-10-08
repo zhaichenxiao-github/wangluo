@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:qinc="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dp_5"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cb_select"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_toRightOf="@id/cb_select"
+        android:id="@+id/iv_goodsDefaultIcon"
+        android:layout_width="@dimen/dp_50"
+        android:layout_centerVertical="true"
+        android:layout_height="@dimen/dp_50" />
+    <TextView
+        android:id="@+id/tv_goodsDesc"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_toRightOf="@id/iv_goodsDefaultIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/dp_10"
+        android:id="@+id/tv_goodsDefaultSku"
+        android:layout_toRightOf="@id/iv_goodsDefaultIcon"
+        android:layout_below="@id/tv_goodsDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_goodsDefaultPrice"
+        android:layout_toRightOf="@id/iv_goodsDefaultIcon"
+        android:layout_below="@id/tv_goodsDefaultSku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ren.qinc.numberbutton.NumberButton
+        android:id="@+id/number_button"
+        android:layout_below="@id/tv_goodsDefaultSku"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        qinc:editable="true"/>
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CartFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl_gouwu"
+        android:background="@color/colorBlue"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:id="@+id/iv_tuichu"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:background="@mipmap/icon_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="购物车"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_25"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_edit"
+            android:text="编辑"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_15"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/rl_gouwu"
+        android:layout_width="match_parent"
+        android:id="@+id/rv"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/rtn_whole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="全选"
+            android:textSize="@dimen/dp_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="合计:￥100"
+            android:id="@+id/tv_prices"
+            android:textColor="@color/colorRed"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_check_out"
+            android:layout_marginLeft="@dimen/dp_170"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorRed"
+            android:text="去结算" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#03A9F4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/iv_ss"
+                android:background="@mipmap/b"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_sys"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:background="@mipmap/a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+   <com.youth.banner.Banner
+       android:id="@+id/banner"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"/>
+    <LinearLayout
+        android:background="@drawable/shap_pao"
+        android:padding="@dimen/dp_8"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <ImageView
+            android:id="@+id/iv_news"
+            android:src="@drawable/icon_news"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="wrap_content" />
+        <com.paradoxie.autoscrolltextview.VerticalTextview
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:id="@+id/vt"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv"
+            android:src="@drawable/icon_special"
+            android:layout_width="30dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:id="@+id/tv_rv"
+            android:layout_toRightOf="@id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_rv"
+            android:id="@+id/rv"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/home_container_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:layerType="software">
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="200dp"
+            android:clipChildren="false"
+            android:layout_centerInParent="true"
+            android:id="@+id/rl_vp"
+            android:layout_height="300dp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

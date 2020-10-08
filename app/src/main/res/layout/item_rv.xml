@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <net.wujingchao.android.view.SimpleTagImageView
+        android:layout_width="@dimen/dp_70"
+        android:id="@+id/iv"
+        android:scaleType="fitXY"
+        app:simple_tag_textSize="18sp"
+        app:simple_corner_distance="30dp"
+        app:simple_tag_text="折扣"
+        app:simple_tag_background_color="#F44336"
+        app:simple_tag_orientation="right_top"
+        app:simple_tag_textColor="@color/colorWhite"
+        app:simple_tag_width="20dip"
+        android:layout_height="@dimen/dp_70" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_price_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

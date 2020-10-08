@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.ShopListHomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_shop_list"
+        android:background="@color/colorBlue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/iv_tuichu"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:background="@mipmap/icon_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="@dimen/dp_100"
+            android:id="@+id/tabs"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_below="@id/rl_shop_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/icon_favorite_nor"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="分享"
+                android:textSize="@dimen/dp_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_cart"
+                android:layout_marginLeft="@dimen/dp_100"
+                android:background="@drawable/select_tab_cart"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <TextView
+                android:layout_marginLeft="@dimen/dp_90"
+                android:text="购物车"
+                android:textSize="@dimen/dp_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:text="加入购物车"
+            android:background="@color/colorRed"
+            android:gravity="center"
+            android:textSize="@dimen/dp_15"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>
